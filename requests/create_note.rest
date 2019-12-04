@@ -1,7 +1,7 @@
-POST          https://murmuring-coast-12424.herokuapp.com/notes
+PUT          https://murmuring-coast-12424.herokuapp.com/notes/1
 Content-Type: application/json
 
 {
-    "content": "heihei",
+    "content": "Keskiviikko",
     "important": false
 }

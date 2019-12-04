@@ -52,42 +52,41 @@ app.post('/notes', (req, res) => {
     console.log(note)
     res.json(note)
 })
-// app.put('/notes/:id', (request, response) => {
-//     const body = request.body
-//     const { id } = request.params
-//     console.log(id)
-//     console.log(body)
+app.put('/notes/:id', (request, response) => {
+    const body = request.body
+    const { id } = request.params
+    console.log(id)
+    console.log(body)
+    const update = (body)
+    response.status(200).send(update)
 
-//     const update = (body)
-//     response.status(200).send(update)
-
-//     // generate id /
-
-
-//     const note = notes.find(note => note.id === id)
+    //     // generate id /
 
 
-//     if (note) {
-//         //atruuutti kerrallaan
+    //     const note = notes.find(note => note.id === id)
 
 
-//     } else {
-//         res.status(404).end()
-//         // luo uussiii 
-//         note = { ...note, content: content }
-//         console.log(...b, ...c)
-//     }
-//     id: generateId(),
+    //     if (note) {
+    //         //atruuutti kerrallaan
 
 
-
-// const id = Number(req.params.id)
-// notes = notes.filter(note => note.id !== id)
-// res.status(204).end();
+    //     } else {
+    //         res.status(404).end()
+    //         // luo uussiii 
+    //         note = { ...note, content: content }
+    //         console.log(...b, ...c)
+    //     }
+    //     id: generateId(),
 
 
 
-//})
+    // const id = Number(req.params.id)
+    // notes = notes.filter(note => note.id !== id)
+    // res.status(204).end();
+
+
+
+})
 
 
 app.get('/', (req, res) => {
