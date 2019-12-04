@@ -53,36 +53,32 @@ app.post('/notes', (req, res) => {
     res.json(note)
 })
 app.put('/notes/:id', (request, response) => {
+    console.log("hello")
     const body = request.body
     const { id } = request.params
     console.log(id)
     console.log(body)
     const update = (body)
-    response.status(200).send(update)
 
-    //     // generate id /
-
-
-    //     const note = notes.find(note => note.id === id)
+    const index = notes.findIndex(note => note.id == id)
+    console.log(index)
+    console.log(update)
 
 
-    //     if (note) {
-    //         //atruuutti kerrallaan
+    if (index >= 0) {
+        notes[index] = { ...notes[index], ...update }
+        response.status(200).send(notes[index])
+    }
 
 
-    //     } else {
-    //         res.status(404).end()
-    //         // luo uussiii 
-    //         note = { ...note, content: content }
-    //         console.log(...b, ...c)
-    //     }
-    //     id: generateId(),
+    else {
+        update.id = generateId();
+        notes = notes.concat(update)
+        response.status(201).send(update)
+
+    }
 
 
-
-    // const id = Number(req.params.id)
-    // notes = notes.filter(note => note.id !== id)
-    // res.status(204).end();
 
 
 

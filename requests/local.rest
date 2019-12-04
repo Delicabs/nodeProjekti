@@ -1,4 +1,4 @@
-PUT           https://murmuring-coast-12424.herokuapp.com/notes/1
+PUT http://localhost:3001/notes/1
 Content-Type: application/json
 
 {
