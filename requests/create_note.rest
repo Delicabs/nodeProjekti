@@ -1,7 +1,7 @@
-POST https://murmuring-coast-12424.herokuapp.com/notes
+POST          https://murmuring-coast-12424.herokuapp.com/notes
 Content-Type: application/json
 
 {
-    "content": "Mooro",
+    "content": "heihei",
     "important": false
 }

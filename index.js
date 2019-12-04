@@ -8,19 +8,19 @@ app.use(cors())
 let notes = [
     {
         id: 1,
-        content: "HTML is easy",
+        content: "Katon kunnostus",
         date: "2019-05-30T17:30:31.098Z",
         important: true
     },
     {
         id: 2,
-        content: "Browser can execute only Javascript",
+        content: "Tietokoneen kovalevyn osto",
         date: "2019-05-30T18:39:34.091Z",
         important: false
     },
     {
         id: 3,
-        content: "GET and POST are the most important methods of HTTP protocol",
+        content: "Joulukuusi",
         date: "2019-05-30T19:20:14.298Z",
         important: true
     }
@@ -48,11 +48,47 @@ app.post('/notes', (req, res) => {
         id: generateId(),
     }
 
-
     notes = notes.concat(note)//lisää olemassa olevaan "listaan" cutn paste
     console.log(note)
     res.json(note)
 })
+// app.put('/notes/:id', (request, response) => {
+//     const body = request.body
+//     const { id } = request.params
+//     console.log(id)
+//     console.log(body)
+
+//     const update = (body)
+//     response.status(200).send(update)
+
+//     // generate id /
+
+
+//     const note = notes.find(note => note.id === id)
+
+
+//     if (note) {
+//         //atruuutti kerrallaan
+
+
+//     } else {
+//         res.status(404).end()
+//         // luo uussiii 
+//         note = { ...note, content: content }
+//         console.log(...b, ...c)
+//     }
+//     id: generateId(),
+
+
+
+// const id = Number(req.params.id)
+// notes = notes.filter(note => note.id !== id)
+// res.status(204).end();
+
+
+
+//})
+
 
 app.get('/', (req, res) => {
     res.send('<h1>Hello world!</h1>')
